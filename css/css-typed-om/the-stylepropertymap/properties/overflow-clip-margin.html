@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>'overflow-clip-margin' property</title>
+<link rel="help" href="https://drafts.css-houdini.org/css-typed-om-1/#dom-stylepropertymap-get">
+<link rel="help" href="https://drafts.css-houdini.org/css-typed-om-1/#dom-stylepropertymap-set">
+<link rel="help" href="https://drafts.css-houdini.org/css-typed-om-1/#property-stle-value-normalization">
+<script src="/resources/testharness.js"></script>
+<script src="/resources/testharnessreport.js"></script>
+<script src="../../resources/testhelper.js"></script>
+<script src="resources/testsuite.js"></script>
+<body>
+<div id="log"></div>
+<script>
+'use strict';
+
+runPropertyTests('overflow-clip-margin', [
+  { syntax: 'border-box' },
+  { syntax: 'content-box' },
+  { syntax: 'padding-box' },
+  { syntax: '10' },
+]);
+
+runUnsupportedPropertyTests('overflow-clip-margin', [
+  { syntax: 'border-box 10' },
+  { syntax: 'content-box 10' },
+  { syntax: 'padding-box 10' },
+  { syntax: '10 border-box' },
+  { syntax: '10 content-box' },
+  { syntax: '10 padding-box' },
+]);
+
+</script>
