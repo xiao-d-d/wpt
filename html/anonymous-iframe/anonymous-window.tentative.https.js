@@ -10,7 +10,7 @@ promise_test_parallel(async t => {
   iframe.contentWindow.modified = true;
   iframe.anonymous = true;
   iframe.src = ORIGIN + "/blank.html";
-  // Wait for navigation finished.
+  // Wait for navigation to complete.
   await t.step_wait(() =>
     iframe.contentWindow.location.href === iframe.src,
     "Wait for the navigation to complete");
@@ -25,7 +25,7 @@ promise_test_parallel(async t => {
   iframe.contentWindow.modified = true;
   iframe.anonymous = false;
   iframe.src = ORIGIN + "/blank.html";
-  // Wait for navigation finished.
+  // Wait for navigation to complete.
   await t.step_wait(() =>
     iframe.contentWindow.location.href === iframe.src,
     "Wait for the navigation to complete");
@@ -39,7 +39,7 @@ promise_test_parallel(async t => {
   document.body.appendChild(iframe);
   iframe.contentWindow.modified = true;
   iframe.src = ORIGIN + "/blank.html";
-  // Wait for navigation finished.
+  // Wait for navigation to complete.
   await t.step_wait(() =>
     iframe.contentWindow.location.href === iframe.src,
     "Wait for the navigation to complete");
